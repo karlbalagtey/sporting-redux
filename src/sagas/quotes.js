@@ -10,9 +10,6 @@ export function* addQuote() {
     const quotesCollection = yield select(selectQuotes);
     let quotes = quotesCollection || [];
 
-    console.log(quoteAdded);
-    console.log(quotesCollection);
-
     if (quotesCollection) {
       quotes = [...quotesCollection, quoteAdded];
     } else {

@@ -19,14 +19,12 @@ export function AddQuoteForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(quote);
     dispatch(addQuoteStart(quote));
   };
 
   const handleChange = e => {
     const { value, name } = e.target;
     setQuote({ ...quote, [name]: value });
-    console.log(quote);
   };
 
   const handleReset = e => {
