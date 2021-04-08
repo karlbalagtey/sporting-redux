@@ -3,14 +3,15 @@ import styled from 'styled-components/macro';
 export function Quote({ message, person }) {
   return (
     <QuoteContainer>
-      <QuoteWrap>{message}</QuoteWrap>
+      <Message>{message}</Message>
       <Person>{person}</Person>
     </QuoteContainer>
   );
 }
 
-const QuoteContainer = styled.div`
-  padding: 1rem;
+const QuoteContainer = styled.li`
+  list-style: none;
+  padding: 10px;
   border-bottom: 1px solid lightgray;
 
   &:last-child {
@@ -18,13 +19,12 @@ const QuoteContainer = styled.div`
   }
 `;
 
-const QuoteWrap = styled.p`
+const Message = styled.blockquote`
   font-style: italic;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin: 0;
 `;
 
 const Person = styled.p`
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  font-size: 12px;
+  margin: 10px 0;
 `;

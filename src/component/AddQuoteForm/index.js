@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addQuoteStart, resetAddQuote } from 'redux/quote/actions';
-import { selectIsSuccessful, selectQuotes } from 'redux/quote/selectors';
+import { addQuoteStart, resetAddQuote } from 'actions';
+import { selectIsSuccessful } from 'selectors';
 
 import { Form } from './components/Form';
 import { Button } from './components/Button';
@@ -9,20 +9,24 @@ import { Card } from '../Card';
 
 import styled from 'styled-components/macro';
 
-export function AddForm() {
+export function AddQuoteForm() {
   const dispatch = useDispatch();
   const isSuccessful = useSelector(selectIsSuccessful);
-  const [quote, setQuote] = useState('');
-  const quotes = useSelector(selectQuotes);
+  const [quote, setQuote] = useState({
+    message: '',
+    person: '',
+  });
 
   const handleSubmit = e => {
     e.preventDefault();
+    console.log(quote);
     dispatch(addQuoteStart(quote));
   };
 
   const handleChange = e => {
     const { value, name } = e.target;
     setQuote({ ...quote, [name]: value });
+    console.log(quote);
   };
 
   const handleReset = e => {
@@ -35,27 +39,29 @@ export function AddForm() {
   };
 
   return (
-    <Card className={!quotes && 'full'}>
-      <AddFormWrap onSubmit={handleSubmit}>
+    <Card>
+      <AddQuoteFormWrap onSubmit={handleSubmit}>
         {isSuccessful ? (
           <ThankYou>
             <h2>Thank you!</h2>
-            <Button onClick={handleReset}>Add another?</Button>
+            <Button type="button" onClick={handleReset}>
+              Add another?
+            </Button>
           </ThankYou>
         ) : (
           <Form onHandleChange={handleChange} {...quote} />
         )}
-      </AddFormWrap>
+      </AddQuoteFormWrap>
     </Card>
   );
 }
 
-const AddFormWrap = styled.form`
-  padding: 1rem;
+const AddQuoteFormWrap = styled.form`
+  padding: 10px;
 
   h2 {
     margin-top: 0;
-    font-size: 1rem;
+    font-size: 18px;
   }
 `;
 

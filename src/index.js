@@ -7,7 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import 'sanitize.css/sanitize.css';
 
 import { App } from './app';
-import { store, persistor } from './redux/store';
+import { store, persistor } from './app/store';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

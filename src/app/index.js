@@ -1,13 +1,13 @@
 import React from 'react';
 
 import styled from 'styled-components/macro';
-import bgImg from './assets/bg.png';
+import bgImg from 'assets/bg.png';
 import { GlobalStyle } from 'styles/global-styles';
 
-import { Header } from './component/Header';
-import { Footer } from './component/Footer';
-import { QuoteList } from './component/QuoteList';
-import { AddForm } from './component/AddForm';
+import { Header } from 'component/Header';
+import { Footer } from 'component/Footer';
+import { QuoteList } from 'component/QuoteList';
+import { AddQuoteForm } from 'component/AddQuoteForm';
 
 import { StyleConstants } from 'styles/StyleConstants';
 
@@ -17,8 +17,8 @@ export function App() {
       <Header />
       <Wrapper>
         <Content>
+          <AddQuoteForm />
           <QuoteList />
-          <AddForm />
         </Content>
       </Wrapper>
       <Footer />
@@ -37,15 +37,15 @@ const Wrapper = styled.main`
   flex-direction: column;
 `;
 
-const Content = styled.div`
+const Content = styled.section`
   display: flex;
   flex-direction: column;
   align-self: center;
   width: 100%;
   max-width: ${StyleConstants.CONTAINER};
-  padding: 1rem;
+  padding: 20px;
 
   @media (min-width: ${StyleConstants.TABLET}) {
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
 `;

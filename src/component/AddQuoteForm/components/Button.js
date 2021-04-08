@@ -14,7 +14,7 @@ const ButtonWrap = styled.button`
   border: 1px solid ${StyleConstants.BLUE};
   border-radius: 2px;
   font-size: ${StyleConstants.SMALLTEXT};
-  padding: 0.7rem;
+  padding: 12px;
   color: ${StyleConstants.BLUE};
   background-color: transparent;
   cursor: pointer;
@@ -22,6 +22,6 @@ const ButtonWrap = styled.button`
 
   &:hover {
     background-color: ${StyleConstants.BLUE};
-    color: #ffffff;
+    color: #fff;
   }
 `;

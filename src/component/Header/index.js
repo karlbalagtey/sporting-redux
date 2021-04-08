@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import headerBg from './assets/header.jpg';
+import headerBg from 'assets/header.jpg';
 
 export function Header() {
   return (
@@ -18,7 +18,7 @@ const HeaderWrap = styled.header`
   background-position: 50% 50%;
 
   h1 {
-    color: #ffffff;
+    color: #fff;
     font-size: 3.4em;
     font-weight: 300;
   }

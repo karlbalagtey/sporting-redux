@@ -1,4 +1,4 @@
-import QuoteActionTypes from './types';
+import QuoteActionTypes from '../constants';
 
 const INITIAL_STATE = {
   quotes: null,

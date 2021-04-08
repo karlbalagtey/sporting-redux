@@ -1,4 +1,4 @@
-import QuoteActionTypes from './types';
+import QuoteActionTypes from '../constants';
 
 export const addQuoteStart = quoteAdded => ({
   type: QuoteActionTypes.ADD_QUOTE_START,

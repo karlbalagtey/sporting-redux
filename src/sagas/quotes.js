@@ -1,14 +1,17 @@
 import { takeLatest, put, call, all, select } from 'redux-saga/effects';
-import QuoteActionTypes from './types';
+import QuoteActionTypes from '../constants';
 
-import { addQuoteSuccess, addQuoteFailure } from './actions';
-import { selectQuotes, selectQuoteAdded } from './selectors';
+import { addQuoteSuccess, addQuoteFailure } from '../actions';
+import { selectQuotes, selectQuoteAdded } from '../selectors';
 
 export function* addQuote() {
   try {
     const quoteAdded = yield select(selectQuoteAdded);
     const quotesCollection = yield select(selectQuotes);
     let quotes = quotesCollection || [];
+
+    console.log(quoteAdded);
+    console.log(quotesCollection);
 
     if (quotesCollection) {
       quotes = [...quotesCollection, quoteAdded];

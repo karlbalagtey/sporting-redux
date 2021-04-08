@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import quoteReducer from './quote/reducers';
+import quoteReducer from './quotes';
 
 const persistConfig = {
   key: 'root',
